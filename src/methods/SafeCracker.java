@@ -3,6 +3,7 @@
 import java.applet.AudioClip;
 import java.io.File;
 import java.net.MalformedURLException;
+import java.util.Iterator;
 import java.util.Random;
 
 import javax.sound.sampled.AudioInputStream;
@@ -10,6 +11,7 @@ import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 import javax.swing.JApplet;
 import javax.swing.JOptionPane;
+import javax.swing.text.StyledEditorKit.ForegroundAction;
 
 public class SafeCracker {
 
@@ -18,10 +20,14 @@ public class SafeCracker {
 		 * Your mission: use the tryCode method to crack the safe by trying all possible
 		 * combinations
 		 */
+for (int i = 0; i < 100; i++) {
+	System.out.println(i);
+	tryCode(9999999-i);
+}
+}
 
 
-	}
-
+	
 	static void tryCode(int guess) {
 		System.out.println("trying " + guess);
 
@@ -33,7 +39,7 @@ public class SafeCracker {
 			System.exit(0);
 		}
 	}
-
+	
 	private static void playTheSoundOfSuccess() {
 		try {
 			Clip clip = AudioSystem.getClip();
